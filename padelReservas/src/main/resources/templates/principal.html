@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Club de Padel Salinas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0faff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #007bff;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #007bff;
+            margin-top: 40px;
+        }
+
+        .form-label {
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            margin-top: 20px;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        iframe {
+            display: block;
+            margin: 0 auto;
+        }
+        .navbar {
+            background-color: #b3d9ff !important;
+        }
+    </style>
+</head>
+<body>
+<div th:insert="~{components/fragments :: nav_bar2}"></div>
+
+<div class="container">
+    <div th:insert="~{components/fragments :: nav_bar}"></div>
+    <h1>¡Club de Padel Salinas!</h1>
+    <img th:src="@{/padel.jpg}" alt="Foto del Club" class="img-fluid mb-4">
+    <h2>Ubicación</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3144.1653072942026!2d-1.1168718!3d37.9966045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd63823f9c70d281%3A0xbbe9350176e1224c!2sClub%20de%20P%C3%A1del%20Nueva%20Flota!5e0!3m2!1ses!2ses!4v1706885281858!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <h2>Sobre Nosotros</h2>
+    <p>El Club de Padel Salinas es un lugar donde puedes disfrutar de tu pasión por el padel en un ambiente amigable y acogedor. Estamos ubicados en Cuatro Caminos, 19 BAJO, Murcia. ¡Ven a conocernos!</p>
+    <h2>Contacto</h2>
+
+    <form action="mailto:clubpadelsalinas@cesurformacion.com" method="post">
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="email" class="form-label">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="mensaje" class="form-label">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="4" class="form-control" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Enviar Mensaje</button>
+    </form>
+</div>
+<div th:insert="~{components/fragments :: footer}"></div>
+</body>
+</html>
+
